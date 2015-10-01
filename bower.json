@@ -1,0 +1,13 @@
+{
+  "name": "widgets-spa",
+  "version": "0.0.1",
+  "description": "Interview project for Red Ventures",
+  "authors": [
+    "Brent Nichols"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "rdash-ui": "~1.0.1",
+    "font-awesome": "~4.4.0"
+  }
+}
