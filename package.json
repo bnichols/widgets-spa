@@ -1,0 +1,19 @@
+{
+  "name": "widgets-spa",
+  "description": "Interview project for Red Ventures",
+  "version": "0.0.1",
+  "author": "Brent Nichols",
+  "dependencies": {},
+  "devDependencies": {
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-nodemon": "^2.0.4",
+    "gulp-task-listing": "^1.0.1",
+    "gulp-util": "^3.0.6",
+    "http-server": "^0.8.5"
+  },
+  "scripts": {
+    "start": "http-server -a 0.0.0.0 -p 8000"
+  }
+}
