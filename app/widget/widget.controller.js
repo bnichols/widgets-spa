@@ -6,9 +6,18 @@
 	angular
 		.module('app.widget')
 		.controller('WidgetController', WidgetController);
-
-	function WidgetController() {
+	WidgetController.$inject = ['dataservice'];
+	function WidgetController(dataservice) {
 		var widget = this;
-		widget.widgets = [{"id":"1","name":"bar","color":"blue","price":"$99.50","melts":"no","inventory":"888"}];
+		widget.widgets = [];
+
+		function getWidgets() {
+			return dataservice.getWidgets().then(function (data) {
+				widget.widgets = data;
+				return widget.widgets;
+			})
+		}
+		
+		getWidgets();
 	}
 })();
