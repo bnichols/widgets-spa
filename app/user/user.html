@@ -17,10 +17,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td class="text-center">1</td>
-              <td>JBoss McHuston</td>
-              <td><img src="https://s.gravatar.com/avatar/e11550b1bf793d43639292b196374262?s=48"></td>
+            <tr ng-repeat="user in userController.users">
+              <td class="text-center">{{user.id}}</td>
+              <td>{{user.name}}</td>
+              <td><img src="{{user.avatarURL}}"></td>
             </tr>
           </tbody>
         </table>
