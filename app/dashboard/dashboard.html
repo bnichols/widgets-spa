@@ -6,7 +6,7 @@
         <div class="widget-icon green pull-left">
           <i class="fa fa-users"></i>
         </div>
-        <div class="title">{5}</div>
+        <div class="title">{{dashboardController.users.length}}</div>
         <div class="comment">Users</div>
       </div>
     </div>
@@ -17,7 +17,8 @@
         <div class="widget-icon green pull-left">
           <i class="fa fa-users"></i>
         </div>
-        <div class="title">{10}</div>
+        <div class="title">
+        <span>{{dashboardController.widgets.length}}</span></div>
         <div class="comment">Widgets</div>
       </div>
     </div>
@@ -42,17 +43,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td class="text-center">1</td>
-              <td>Joe Bloggs</td>
-            </tr>
-            <tr>
-              <td class="text-center">2</td>
-              <td>Timothy Hernandez</td>
-            </tr>
-            <tr>
-              <td class="text-center">3</td>
-              <td>Joe Bickham</td>
+            <tr ng-repeat="user in dashboardController.users">
+              <td class="text-center">{{user.id}}</td>
+              <td>{{user.name}}</td>
             </tr>
           </tbody>
         </table>
@@ -75,13 +68,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td class="text-center">1</td>
-              <td>A</td>
-            </tr>
-            <tr>
-              <td class="text-center">2</td>
-              <td>B</td>
+            <tr ng-repeat="widget in dashboardController.widgets">
+              <td class="text-center">{{widget.id}}</td>
+              <td>{{widget.name}}</td>
             </tr>
           </tbody>
         </table>
