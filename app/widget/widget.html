@@ -6,7 +6,7 @@
     <div class="widget">
       <div class="widget-header">Widgets
         <div class="pull-right">
-          <button class="btn btn-sm btn-info">+ Create</button>
+          <button class="btn btn-sm btn-info" type="submit" form="createWidgetForm">+ Create</button>
         </div>
       </div>
       <div class="table-responsive">
@@ -19,16 +19,19 @@
               <th>Price</th>
               <th>Melts?</th>
               <th>Inventory</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
             <tr ng-repeat="widget in widgetController.widgets">
+              <td><a 
               <td class="text-center">{{widget.id}}</td>
               <td>{{widget.name}}</td>
               <td>{{widget.color}}</td>
               <td>{{widget.price}}</td>
               <td>{{widget.melts}}</td>
               <td>{{widget.inventory}}</td>
+              <td><button class="btn btn-sm btn-info" ng-click='widgetController.deleteWidget(widget)'>Delete</button></td>
             </tr>
           </tbody>
         </table>
@@ -48,14 +51,14 @@
     <div class="widget">
       <div class="widget-header">Create/Edit Template</div>
       <div class="widget-body">
-        <form class="form-horizontal">
+        <form id="createWidgetForm" class="form-horizontal" ng-submit="widgetController.createWidget()">
 
           <legend>Create Widget</legend>
 
           <!-- Name-->
           <div class="controls">
           Name
-            <input id="widget-name" name="widget-name" type="text" placeholder="foo-bar" class="input-medium">
+            <input id="widget-name" name="widget-name" type="text" placeholder="foo-bar" class="input-medium" ng-model="widgetController.newWidget.name" required>
           </div>
 
           <!-- Price -->
@@ -63,14 +66,14 @@
             <div class="input-prepend">
             Price
               <span class="add-on">$</span>
-              <input id="widget-price" name="widget-price" class="input-medium" placeholder="0.00" type="text">
+              <input id="widget-price" name="widget-price" class="input-medium" placeholder="0.00" type="text" ng-model="widgetController.newWidget.price" required>
             </div>
           </div>
 
           <!-- Color -->
           <div class="controls">
           Color
-            <select id="widget-color" name="widget-color" class="input-large">
+            <select id="widget-color" name="widget-color" class="input-large" ng-model="widgetController.newWidget.color" required>
               <option>red</option>
               <option>purple</option>
               <option>black</option>
@@ -84,14 +87,16 @@
           <!-- Melts -->
           <div class="controls">
             Melts
-            <input type="checkbox" name="widget-properties" id="widget-properties-0" value="melts">
+            <input type="checkbox" name="widget-properties" id="widget-properties-0" value="melts" ng-model="widgetController.newWidget.melts">
           </div>
 
           <!-- Inventory -->
           <div class="controls">
             Inventory
-            <input id="widget-count" name="widget-count" type="text" placeholder="#?" class="input-small">
+            <input id="widget-count" name="widget-count" type="text" placeholder="#?" class="input-small" ng-model="widgetController.newWidget.inventory">
           </div>
+          <button class="btn btn-sm btn-info" type="submit" form="createWidgetForm">+ Create</button>
+
         </form>
       </div><!-- End Widget body -->
     </div><!-- End Widget -->

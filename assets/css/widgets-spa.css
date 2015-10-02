@@ -1,0 +1,8 @@
+/**
+ * Additional formatting for interview project
+ */
+
+/* space out input page, too compact */
+.controls {
+	padding-bottom : 10px;
+}

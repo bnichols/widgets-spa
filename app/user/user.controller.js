@@ -8,15 +8,15 @@
 	angular
 		.module('app.user')
 		.controller('UserController', UserController);
-	UserController.$inject = ['dataservice'];
+	UserController.$inject = ['userDataservice'];
 
-	function UserController(dataservice) {
+	function UserController(userDataservice) {
 		var user = this;
 		user.users = [];
 
 		function getUsers() {
 			// data service returns a promise for the users
-			return dataservice.getUsers().then(function (data) {
+			return userDataservice.getUsers().then(function (data) {
 				user.users = data;
 				return user.users;
 			});

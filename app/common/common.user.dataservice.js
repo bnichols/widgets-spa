@@ -7,10 +7,9 @@
 
 	angular
 		.module('app')
-		.factory('dataservice', function($http, $q) {
+		.factory('userDataservice', function($http, $q) {
 			var service = {
-				getUsers: getUsers,
-				getWidgets: getWidgets
+				getUsers: getUsers
 			};
 			return service;
 
@@ -20,10 +19,8 @@
 					.catch(function(e){return e});
 			}
 
-			function getWidgets() {
-				return $http.get('http://spa.tglrw.com:4000/widgets')
-					.then(function(response){return response.data})
-					.catch(function(e){return e});
+			function emptyWidget() {
+				return {}
 			}
 		});
 })();
