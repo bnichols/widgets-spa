@@ -8,10 +8,28 @@
 	angular
 		.module('app.dashboard')
 		.controller('DashboardController', DashboardController);
+	DashboardController.$inject = ['dataservice'];
 
-	function DashboardController() {
+	function DashboardController(dataservice) {
 		var dash = this;
-		dash.widgets = [{"id":"1","name":"Widget A"},{"id":"2","name":"Widget B"}];
-		dash.users = [{"id":"1","name":"Joe Bloggs"},{"id":"2","name":"Brent Nichols"},{"id":"3","name":"Thomas Hopkins"}];
+		dash.users = [];
+		dash.widgets = [];
+
+		function getUsers() {
+      return dataservice.getUsers().then(function (data) {
+      	dash.users = data;
+      	return dash.users;
+	  	});
+    }
+
+    function getWidgets() {
+    	return dataservice.getWidgets().then(function (data) {
+    		dash.widgets = data;
+    		return dash.widgets;
+    	});
+    }
+
+		getUsers();
+		getWidgets();
 	}
 })();
