@@ -17,6 +17,7 @@
 		controller.startCreate = startCreate;
 		controller.startEdit = startEdit;
 		controller.upsert = doCreate;
+		controller.cancel = cancel;
 		controller.headline = "";
 		controller.actionText = "";
 
@@ -50,9 +51,14 @@
 			})
 		}
 
-		function doCreate() {
-			controller.widget.create();
+		function cancel() {
 			$state.go('widget');
+		}
+
+		function doCreate() {
+			controller.widget.create().success(function() {
+				$state.go('widget');
+			});
 		}
 
 		function doEdit() {
