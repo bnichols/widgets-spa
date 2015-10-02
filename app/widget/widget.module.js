@@ -1,3 +1,7 @@
+/**
+ * Widget module
+ */
+
 (function() {
 	'use strict';
 

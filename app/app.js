@@ -1,3 +1,7 @@
+/**
+ * App module
+ */
+
 (function() {
   'use strict';
 

@@ -1,3 +1,7 @@
+/**
+ * Common dataservice factory
+ */
+
 (function () {
 	'use strict';
 

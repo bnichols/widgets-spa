@@ -15,6 +15,7 @@
 		user.users = [];
 
 		function getUsers() {
+			// data service returns a promise for the users
 			return dataservice.getUsers().then(function (data) {
 				user.users = data;
 				return user.users;

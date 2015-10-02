@@ -1,3 +1,7 @@
+/**
+ * App config
+ */
+
 (function() {
   'use strict';
 

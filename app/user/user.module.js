@@ -1,3 +1,7 @@
+/**
+ * User module
+ */
+
 (function() {
 	'use strict';
 

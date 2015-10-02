@@ -1,3 +1,7 @@
+/**
+ * Dashboard module
+ */
+
 (function() {
 	'use strict';
 
