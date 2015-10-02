@@ -27,6 +27,16 @@
           url: '/widget',
           templateUrl: 'widget/widget.html',
           controller: 'WidgetController as widgetController'
+        })
+        .state('createWidget', {
+        	url: '/widget/create',
+        	templateUrl: 'widget/widget-single.html',
+        	controller: 'WidgetController as widgetController'
+        })
+        .state('editWidget', {
+        	url: '/widget/edit/:id',
+        	templateUrl: 'widget/widget-single.html',
+        	controller: 'WidgetController as widgetController'
         });
 
       // If route isn't matched

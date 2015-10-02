@@ -48,7 +48,7 @@
   				$http.post(url, this);
   			}, 
   			update: function() {
-  				$http.put(url, this);
+  				return $http.put(url + '/' + this.id, this);
   			},
   			delete: function() {
   				$http.delete(url + '/' + this.id);
