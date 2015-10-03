@@ -17,3 +17,8 @@
 .form-input {
 	margin-left: 10px;
 }
+
+/* separate filter text from create button */
+.filter-text {
+	padding-right: 20px;
+}

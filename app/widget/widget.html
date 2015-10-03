@@ -6,7 +6,16 @@
     <div class="widget">
       <div class="widget-header">Widgets
         <div class="pull-right">
-          <button class="btn btn-sm btn-info" ng-click="widgetController.startCreate()">+ Create</button>
+        	<table>
+        		<tr>
+        			<td class="filter-text">
+			          <input type="text" class="form-control input-sm" ng-model="queryWidget">
+			        </td>
+			        <td>
+         				<button class="btn btn-sm btn-info" ng-click="widgetController.startCreate()">+ Create</button>
+         			</td>
+         		</tr>
+         	</table>
         </div>
       </div>
       <div class="table-responsive">
@@ -23,7 +32,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="widget in widgetController.widgets">
+            <tr ng-repeat="widget in widgetController.widgets | filter:queryWidget">
               <td><a 
               <td class="text-center">{{widget.id}}</td>
               <td>{{widget.name}}</td>
