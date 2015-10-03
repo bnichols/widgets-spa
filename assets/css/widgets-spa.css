@@ -6,3 +6,14 @@
 .controls {
 	padding-bottom : 10px;
 }
+
+/* make url input box longer */
+.url-input {
+	width : 70%;
+	margin-right: 20px;
+}
+
+/* space out input from header */
+.form-input {
+	margin-left: 10px;
+}

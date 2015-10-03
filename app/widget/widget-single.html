@@ -1,18 +1,18 @@
 <!-- Create/Edit -->
 <div class="row">
 
-  <!-- Widget listing -->
+  <!-- Widget form -->
   <div class="col-lg-12">
     <div class="widget">
       <div class="widget-body">
-        <form id="createWidgetForm" class="form-horizontal" ng-submit="widgetController.createWidget()">
+        <form id="createWidgetForm" class="form-horizontal">
 
           <legend>{{widgetController.headline}}</legend>
 
           <!-- Name-->
           <div class="controls">
           Name
-            <input id="widget-name" name="widget-name" type="text" placeholder="foo-bar" class="input-medium" ng-model="widgetController.widget.name" required>
+            <input id="widget-name" name="widget-name" type="text" placeholder="foo-bar" class="input-medium form-input" ng-model="widgetController.widget.name" required>
           </div>
 
           <!-- Price -->
@@ -20,14 +20,14 @@
             <div class="input-prepend">
             Price
               <span class="add-on">$</span>
-              <input id="widget-price" name="widget-price" class="input-medium" placeholder="0.00" type="text" ng-model="widgetController.widget.price" required>
+              <input id="widget-price" name="widget-price" class="input-medium form-input" placeholder="0.00" type="text" ng-model="widgetController.widget.price" required>
             </div>
           </div>
 
           <!-- Color -->
           <div class="controls">
           Color
-            <select id="widget-color" name="widget-color" class="input-large" ng-model="widgetController.widget.color" required>
+            <select id="widget-color" name="widget-color" class="input-large form-input" ng-model="widgetController.widget.color" required>
               <option>red</option>
               <option>purple</option>
               <option>black</option>
@@ -41,13 +41,13 @@
           <!-- Melts -->
           <div class="controls">
             Melts
-            <input type="checkbox" name="widget-properties" id="widget-properties-0" value="melts" ng-model="widgetController.widget.melts">
+            <input type="checkbox" name="widget-properties" id="widget-properties-0" class="form-input" value="melts" ng-model="widgetController.widget.melts">
           </div>
 
           <!-- Inventory -->
           <div class="controls">
             Inventory
-            <input id="widget-count" name="widget-count" type="text" placeholder="#?" class="input-small" ng-model="widgetController.widget.inventory">
+            <input id="widget-count" name="widget-count" type="text" placeholder="#?" class="input-small form-input" ng-model="widgetController.widget.inventory">
           </div>
           <button class="btn btn-sm btn-info" ng-click="widgetController.upsert()">{{widgetController.actionText}}</button>
           <button class="btn btn-sm btn-info" ng-click="widgetController.cancel()">Cancel</button>

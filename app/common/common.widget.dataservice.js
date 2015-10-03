@@ -15,9 +15,14 @@
 	  		Widget: Widget
 	  	};
 
+			/**
+			 * Retrieve all widgets
+			 * @return {list} widget objects
+			 */
 	  	function getAll() {
 				return $http.get(url)
 					.then(function(response){
+						// convert list to Widget objects so they have the prototype methods
 						var widgets = [];
 						for (var widgetIndex in response.data) {
 							widgets.push(new Widget(response.data[widgetIndex]));
@@ -26,6 +31,10 @@
 					.catch(function(e){return e});
 			}
 
+			/**
+			 * Widget constructor
+			 * @param {object} widget attributes
+			 */
   		function Widget(data) {
   			// intialize melts to false
   			this.melts = false;
@@ -45,7 +54,7 @@
   				});
   			}, 
   			create: function() {
-  				$http.post(url, this);
+  				return $http.post(url, this);
   			}, 
   			update: function() {
   				return $http.put(url + '/' + this.id, this);

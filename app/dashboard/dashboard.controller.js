@@ -17,7 +17,7 @@
 
 		function getUsers() {
 			// data service returns a promise for the users
-      return userDataservice.getUsers().then(function (data) {
+      return userDataservice.getAll().then(function (data) {
       	dash.users = data;
       	return dash.users;
 	  	});

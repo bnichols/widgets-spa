@@ -37,7 +37,12 @@
         	url: '/widget/edit/:id',
         	templateUrl: 'widget/widget-single.html',
         	controller: 'WidgetController as widgetController'
-        });
+        })
+        .state('viewUser', {
+        	url: '/user/view/:id',
+        	templateUrl: 'user/user-single.html',
+        	controller: 'UserController as userController'
+        })
 
       // If route isn't matched
       $urlRouterProvider.otherwise('/');

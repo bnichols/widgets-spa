@@ -8,8 +8,8 @@
 	angular
 		.module('app.widget')
 		.controller('WidgetController', WidgetController);
-	WidgetController.$inject = ['widgetDataservice', '$state', '$scope', '$stateParams'];
-	function WidgetController(widgetDataservice, $state, $scope, $stateParams) {
+	WidgetController.$inject = ['widgetDataservice', '$state', '$stateParams'];
+	function WidgetController(widgetDataservice, $state, $stateParams) {
 		var controller = this;
 		controller.widgets = [];
 		controller.widget = new widgetDataservice.Widget();

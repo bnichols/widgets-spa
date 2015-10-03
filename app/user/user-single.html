@@ -1,0 +1,32 @@
+<!-- View User -->
+<div class="row">
+
+  <!-- User form -->
+  <div class="col-lg-12">
+    <div class="widget">
+      <div class="widget-body">
+      	<!-- keep this a form, could later be used to make a create/edit page -->
+        <form id="viewWidgetForm" class="form-horizontal">
+
+          <legend>View User</legend>
+
+          <!-- Name-->
+          <div class="controls">
+          Name
+            <input id="user-name" name="user-name" type="text"  class="input-medium form-input" ng-model="userController.user.name" readonly>
+          </div>
+
+          <!-- Price -->
+          <div class="controls">
+            <div class="input-prepend">
+            Avatar
+              <input id="user-avatar-url" name="user-avatar-url" class="input-medium url-input form-input" ng-model="userController.user.gravatar" readonly>
+              <img src="{{userController.user.gravatar}}">
+            </div>
+          </div>
+          <button class="btn btn-sm btn-info" ng-click="userController.back()">Back</button>
+        </form>
+      </div><!-- End User body -->
+    </div><!-- End User -->
+  </div><!-- End Column -->
+</div><!-- End Row -->
