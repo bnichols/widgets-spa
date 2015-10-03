@@ -6,10 +6,13 @@
   "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-jscs": "^3.0.1",
+    "gulp-jshint": "^1.11.2",
     "gulp-load-plugins": "^0.10.0",
     "gulp-task-listing": "^1.0.1",
     "gulp-util": "^3.0.6",
-    "http-server": "^0.8.5"
+    "http-server": "^0.8.5",
+    "jshint-stylish": "^2.0.1"
   },
   "scripts": {
     "start": "http-server -a 0.0.0.0 -p 8000"

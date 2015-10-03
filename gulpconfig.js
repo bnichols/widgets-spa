@@ -1,7 +1,7 @@
 module.exports = (function() {
 	var config = {
 		// file paths
-		js: './**/*.js',
+		js: './app/**/*.js',
 		build: './build/',
 		htmlTemplates: './app/**/*.html',
 		images: './assets/img/*.*',

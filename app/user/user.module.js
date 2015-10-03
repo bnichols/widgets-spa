@@ -3,7 +3,7 @@
  */
 
 (function() {
-	'use strict';
+  'use strict';
 
-	angular.module('app.user', ['ui.router']);
+  angular.module('app.user', ['ui.router']);
 })();

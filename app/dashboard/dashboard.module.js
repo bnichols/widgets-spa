@@ -1,9 +1,9 @@
 /**
  * Dashboard module
  */
-
 (function() {
-	'use strict';
+  'use strict';
 
-	angular.module('app.dashboard', ['ui.router']);
-})();
+  angular.module('app.dashboard', ['ui.router']);
+}
+)();
