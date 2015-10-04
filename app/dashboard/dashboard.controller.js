@@ -18,8 +18,8 @@
     dash.widgetErrorMessage = '';
     dash.userRetry = false;
     dash.widgetRetry = false;
-    dash.getUsers = getUsers; // expose getUsers for retry
-    dash.getWidgets = getWidgets; // expose getWidgets for retry
+    dash.getUsers = getUsers; // Expose getUsers for retry
+    dash.getWidgets = getWidgets; // Expose getWidgets for retry
 
     function getUsers() {
       // Reset user error message and retry button
