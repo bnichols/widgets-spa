@@ -38,7 +38,7 @@
        */
       function Widget(data) {
         /* Intialize melts to false */
-        this.melts = false;
+        this.melts = "false";
         if (data) {
           this.setData(data);
         }
@@ -55,10 +55,12 @@
           });
         },
         create: function() {
-          return $http.post(url, this);
+          console.log(this);
+          console.log(JSON.stringify(this));
+          return $http.post(url, JSON.stringify(this));
         },
         update: function() {
-          return $http.put(url + '/' + this.id, this);
+          return $http.put(url + '/' + this.id, JSON.stringify(this));
         },
         delete: function() {
           $http.delete(url + '/' + this.id);
