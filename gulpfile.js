@@ -48,21 +48,21 @@ function log(msg) {
  * @param  {Function} done - Callback to fire when karma is done
  */
 function startTests(singleRun, done) {
-    var excludeFiles = [];
-    var karma = require('karma').server;
+  var excludeFiles = [];
+  var karma = require('karma').server;
 
-    karma.start({
-        configFile: __dirname + '/karmaconfig.js',
-        exclude: excludeFiles,
-        singleRun: !!singleRun
-    }, karmaCompleted);
+  karma.start({
+    configFile: __dirname + '/karmaconfig.js',
+    exclude: excludeFiles,
+    singleRun: !!singleRun
+  }, karmaCompleted);
 
-    function karmaCompleted(karmaResult) {
-        log('Karma completed');
-        if (karmaResult === 1) {
-            done('karma: tests failed with code ' + karmaResult);
-        } else {
-            done();
-        }
+  function karmaCompleted(karmaResult) {
+    log('Karma completed');
+    if (karmaResult === 1) {
+      done('karma: tests failed with code ' + karmaResult);
+    } else {
+      done();
     }
+  }
 }
