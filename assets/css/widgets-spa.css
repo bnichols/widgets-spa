@@ -22,3 +22,10 @@
 .filter-text {
 	padding-right: 20px;
 }
+
+/* error message when operation fails */
+.error-message {
+  margin-left: 10px;
+  margin-right: 5px;
+  color: red;
+}

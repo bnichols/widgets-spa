@@ -16,6 +16,9 @@
     controller.users = [];
     controller.back = back;
     controller.startView = startView;
+    controller.errorMessage = '';
+    controller.retry = false;
+    controller.getUsers = getUsers;
 
     function init() {
       switch ($state.current.name) {
@@ -41,11 +44,20 @@
     }
 
     function getUsers() {
+      // Clear retry button and error message
+      controller.errorMessage = '';
+      controller.retry = false;
       /* Data service returns a promise for the users */
-      return userDataservice.getAll().then(function(data) {
-        controller.users = data;
-        return controller.users;
-      });
+      return userDataservice.getAll()
+        .then(function(data) {
+          controller.users = data;
+          return controller.users;
+        })
+        .catch(function(err) {
+          controller.errorMessage = '! Unable to load users from server !';
+          // Display retry button
+          controller.retry = true;
+        });
     }
 
     init();

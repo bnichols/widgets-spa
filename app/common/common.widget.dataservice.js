@@ -29,7 +29,9 @@
               widgets.push(new Widget(response.data[widgetIndex]));
             }
           return widgets;})
-        .catch(function(e) {return e;});
+        .catch(function(e) {
+          throw e;}
+        );
       }
 
       /**
@@ -55,6 +57,8 @@
           });
         },
         create: function() {
+          console.log(this);
+          console.log(JSON.stringify(this));
           return $http.post(url, JSON.stringify(this));
         },
         update: function() {

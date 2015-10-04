@@ -13,15 +13,21 @@
     var controller = this;
     controller.widgets = [];
     controller.widget = new widgetDataservice.Widget();
+    controller.widget.color = '';
     controller.deleteWidget = deleteWidget;
     controller.startCreate = startCreate;
     controller.startEdit = startEdit;
     controller.upsert = doCreate;
     controller.cancel = cancel;
+    controller.getWidgets = getWidgets;
     controller.headline = '';
     controller.actionText = '';
+    controller.errorMessage = '';
+    controller.retry = false;
+    controller.colors = ['red','purple','black','green','magenta','white','depends on the viewing angle'];
 
     function init() {
+      controller.errorMessage = '';
       switch ($state.current.name) {
         case 'widget': {
           /* Listing widgets, call getWidgets to refresh from server */
@@ -47,10 +53,18 @@
     }
 
     function getWidgets() {
-      /* Data service returns a promise for the widgets */
+      // Clear error message and retry button before attempt
+      controller.retry = false;
+      controller.errorMessage = '';
+      // Data service returns a promise for the widgets
       return widgetDataservice.getAll().then(function(data) {
+        controller.errorMessage = '';
         controller.widgets = data;
         return controller.widgets;
+      }).catch(function(err) {
+        // Show error message and retry button
+        controller.errorMessage = '! Unable to load widgets from server !';
+        controller.retry = true;
       });
     }
 
@@ -59,15 +73,23 @@
     }
 
     function doCreate() {
-      controller.widget.create().success(function() {
+      controller.widget.create()
+      .then(function() {
         $state.go('widget');
+      })
+      .catch(function() {
+        controller.errorMessage = '! Error creating widget on server !';
       });
     }
 
     function doEdit() {
-      controller.widget.update().success(function() {
-        $state.go('widget');
-      });
+      controller.widget.update()
+        .then(function() {
+          $state.go('widget');
+        })
+        .catch(function() {
+          controller.errorMessage = '! Error editing widget on server !';
+        });
     }
 
     function startCreate() {

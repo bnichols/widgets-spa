@@ -5,6 +5,10 @@
   <div class="col-lg-12">
     <div class="widget">
       <div class="widget-header">Widgets
+        <span class="error-message">
+          {{widgetController.errorMessage}}
+          <button class="btn btn-sm btn-info" ng-click="widgetController.getWidgets()" ng-show="widgetController.retry">Retry</button>
+        </span>
         <div class="pull-right">
         	<table>
         		<tr>
@@ -33,7 +37,7 @@
           </thead>
           <tbody>
             <tr ng-repeat="widget in widgetController.widgets | filter:queryWidget">
-              <td><a 
+              <td><a
               <td class="text-center">{{widget.id}}</td>
               <td>{{widget.name}}</td>
               <td>{{widget.color}}</td>
@@ -42,7 +46,11 @@
               <td>{{widget.inventory}}</td>
               <td>
               	<button class="btn btn-sm btn-info" ng-click="widgetController.startEdit(widget.id)">Edit</button>
-              	<button class="btn btn-sm btn-info" ng-click="widgetController.deleteWidget(widget)">Delete</button>
+              	<!-- not authorized to delete
+
+                <button class="btn btn-sm btn-info" ng-click="widgetController.deleteWidget(widget)">Delete</button>
+
+                -->
               </td>
             </tr>
           </tbody>

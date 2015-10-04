@@ -20,21 +20,15 @@
             <div class="input-prepend">
             Price
               <span class="add-on">$</span>
-              <input id="widget-price" name="widget-price" class="input-medium form-input" placeholder="0.00" type="text" ng-model="widgetController.widget.price" required>
+              <input id="widget-price" name="widget-price" class="input-medium form-input" placeholder="0.00" type="number" ng-model="widgetController.widget.price" required currency>
             </div>
           </div>
 
           <!-- Color -->
           <div class="controls">
           Color
-            <select id="widget-color" name="widget-color" class="input-large form-input" ng-model="widgetController.widget.color" required>
-              <option>red</option>
-              <option>purple</option>
-              <option>black</option>
-              <option>green</option>
-              <option>magenta</option>
-              <option>white</option>
-              <option>depends on the viewing angle</option>
+            <select id="widget-color" name="widget-color" class="input-large form-input" ng-model="widgetController.widget.color" ng-options="color as color for color in widgetController.colors" required>
+            <option value=''>-- Select Color --</option>
             </select>
           </div>
 
@@ -51,6 +45,9 @@
           </div>
           <button class="btn btn-sm btn-info" ng-click="widgetController.upsert()">{{widgetController.actionText}}</button>
           <button class="btn btn-sm btn-info" ng-click="widgetController.cancel()">Cancel</button>
+          <span class="error-message">
+            {{widgetController.errorMessage}}
+          </span>
         </form>
       </div><!-- End Widget body -->
     </div><!-- End Widget -->

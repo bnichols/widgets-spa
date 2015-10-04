@@ -25,7 +25,7 @@
               users.push(new User(response.data[userIndex]));
             }
           return users;})
-        .catch(function(e) {return e;});
+        .catch(function(e) {throw e;});
       }
 
       /**

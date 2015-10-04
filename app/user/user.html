@@ -5,6 +5,10 @@
   <div class="col-lg-12">
     <div class="widget">
       <div class="widget-header">Users
+        <span class="error-message">
+          {{userController.errorMessage}}
+          <button class="btn btn-sm btn-info" ng-click="userController.getUsers()" ng-show="userController.retry">Retry</button>
+        </span>
         <div class="pull-right"><input type="text" class="form-control input-sm" ng-model="queryUser"></div>
       </div>
       <div class="table-responsive">
