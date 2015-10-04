@@ -55,8 +55,6 @@
           });
         },
         create: function() {
-          console.log(this);
-          console.log(JSON.stringify(this));
           return $http.post(url, JSON.stringify(this));
         },
         update: function() {

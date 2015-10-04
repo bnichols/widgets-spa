@@ -59,11 +59,8 @@
     }
 
     function doCreate() {
-      console.log(controller.widget);
       controller.widget.create().success(function() {
         $state.go('widget');
-      },function(response) {
-        console.log(response);
       });
     }
 

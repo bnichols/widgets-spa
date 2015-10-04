@@ -3,8 +3,6 @@ module.exports = (function() {
   var wiredep = require('wiredep');
   var bowerFiles = wiredep({devDependencies: true})['js'];
 
-  console.log(bowerFiles);
-
 	var config = {
 		// file paths
 		js: './app/**/*.js',
