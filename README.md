@@ -21,5 +21,9 @@ Then access http://localhost:8000/app
 
 To execute style checker (jshint & jscs):
 
+     gulp analyze
+
+To execute unit tests:
+
      gulp test
 
