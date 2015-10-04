@@ -11,5 +11,10 @@
     "font-awesome": "~4.4.0",
     "bootstrap": "~3.3.5",
     "angular-ui-router": "~0.2.15"
+  },
+  "devDependencies": {
+    "bardjs": "~0.1.8",
+    "sinon": "~1.17.0",
+    "chai": "~3.3.0"
   }
 }

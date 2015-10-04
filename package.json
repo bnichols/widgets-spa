@@ -5,6 +5,7 @@
   "author": "Brent Nichols",
   "dependencies": {},
   "devDependencies": {
+    "chai": "^3.3.0",
     "gulp": "^3.9.0",
     "gulp-jscs": "^3.0.1",
     "gulp-jshint": "^1.11.2",
@@ -12,7 +13,18 @@
     "gulp-task-listing": "^1.0.1",
     "gulp-util": "^3.0.6",
     "http-server": "^0.8.5",
-    "jshint-stylish": "^2.0.1"
+    "jshint-stylish": "^2.0.1",
+    "karma": "^0.13.10",
+    "karma-chai": "^0.1.0",
+    "karma-chai-sinon": "^0.1.5",
+    "karma-mocha": "^0.2.0",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-sinon": "^1.0.4",
+    "mocha": "^2.3.3",
+    "phantomjs": "^1.9.18",
+    "sinon": "^1.17.1",
+    "sinon-chai": "^2.8.0",
+    "wiredep": "^2.2.2"
   },
   "scripts": {
     "start": "http-server -a 0.0.0.0 -p 8000"
