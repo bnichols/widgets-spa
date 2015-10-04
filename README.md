@@ -1,6 +1,6 @@
 # widgets-spa: a simple dashboard application of users and widgets
 
-![](https://github.com/nodeapps/http-server/raw/master/widgets-spa.png)
+![](https://raw.githubusercontent.com/bnichols/widgets-spa/master/widgets-spa.png)
 
 # Installing:
 
