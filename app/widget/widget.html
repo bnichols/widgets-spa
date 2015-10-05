@@ -10,16 +10,16 @@
           <button class="btn btn-sm btn-info" ng-click="widgetController.getWidgets()" ng-show="widgetController.retry">Retry</button>
         </span>
         <div class="pull-right">
-        	<table>
-        		<tr>
-        			<td class="filter-text">
-			          <input type="text" class="form-control input-sm" ng-model="queryWidget">
-			        </td>
-			        <td>
-         				<button class="btn btn-sm btn-info" ng-click="widgetController.startCreate()">+ Create</button>
-         			</td>
-         		</tr>
-         	</table>
+          <table>
+            <tr>
+              <td class="filter-text">
+                <input type="text" class="form-control input-sm" ng-model="queryWidget">
+              </td>
+              <td>
+                <button class="btn btn-sm btn-info" ng-click="widgetController.startCreate()">+ Create</button>
+              </td>
+            </tr>
+          </table>
         </div>
       </div>
       <div class="table-responsive">
@@ -45,8 +45,8 @@
               <td>{{widget.melts}}</td>
               <td>{{widget.inventory}}</td>
               <td>
-              	<button class="btn btn-sm btn-info" ng-click="widgetController.startEdit(widget.id)">Edit</button>
-              	<!-- not authorized to delete
+                <button class="btn btn-sm btn-info" ng-click="widgetController.startEdit(widget.id)">Edit</button>
+                <!-- not authorized to delete
 
                 <button class="btn btn-sm btn-info" ng-click="widgetController.deleteWidget(widget)">Delete</button>
 

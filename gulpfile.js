@@ -6,15 +6,15 @@ var config = require('./gulpconfig');
  * analyze code using jshint and jscs
  */
 gulp.task('analyze', function() {
-	log('Running JSHint and JSCS on js');
+  log('Running JSHint and JSCS on js');
 
-	return gulp
-		.src(config.js)
-		.pipe(plugins.jshint())
-		.pipe(plugins.jshint.reporter('jshint-stylish', {verbose:true}))
-		.pipe(plugins.jshint.reporter('fail'))
-		.pipe(plugins.jscs())
-		.pipe(plugins.jscs.reporter());
+  return gulp
+    .src(config.js)
+    .pipe(plugins.jshint())
+    .pipe(plugins.jshint.reporter('jshint-stylish', {verbose:true}))
+    .pipe(plugins.jshint.reporter('fail'))
+    .pipe(plugins.jscs())
+    .pipe(plugins.jscs.reporter());
 });
 
 /**
