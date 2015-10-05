@@ -24,7 +24,8 @@
     controller.actionText = '';
     controller.errorMessage = '';
     controller.retry = false;
-    controller.colors = ['red','purple','black','green','magenta','white','depends on the viewing angle'];
+    controller.colors = ['red','purple','black','green','magenta',
+      'white','depends on the viewing angle',];
 
     function init() {
       controller.errorMessage = '';

@@ -40,7 +40,7 @@
        */
       function Widget(data) {
         /* Intialize melts to false */
-        this.melts = "false";
+        this.melts = 'false';
         if (data) {
           this.setData(data);
         }
