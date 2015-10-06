@@ -21,6 +21,7 @@
     controller.getUsers = getUsers;
 
     function init() {
+      console.log($state);
       switch ($state.current.name) {
         case 'user': {
           /* Listing users, call getUsers to refresh from server */

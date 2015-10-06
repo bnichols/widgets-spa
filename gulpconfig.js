@@ -15,6 +15,7 @@ module.exports = (function() {
         bowerFiles,
         './app/app.js',
         './app/config.js',
+        './test/test-data.js',
         './app/**/*.module.js',
         './app/**/*.js'
       ),
